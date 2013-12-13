@@ -5,20 +5,20 @@
 
 namespace nova {
     namespace internals {
-        template <typename T>
+        template <typename Type>
         struct IsLValueRef {
             static constexpr Bool value = false;
         };
 
-        template <typename T>
-        struct IsLValueRef<T&> {
+        template <typename Type>
+        struct IsLValueRef<Type&> {
             static constexpr Bool value = true;
         };
     }
 
-    template <typename T>
+    template <typename Type>
     inline constexpr Bool isLValueRef() {
-        return internals::IsLValueRef<T>::value;
+        return internals::IsLValueRef<Type>::value;
     }
 }
 

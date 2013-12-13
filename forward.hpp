@@ -6,12 +6,12 @@
 #include "isLValueRef.hpp"
 
 namespace nova {
-    template<typename Arg>
+    template <typename Arg>
     inline constexpr Arg&& forward(UnRef<Arg>& arg) {
         return static_cast<Arg&&>(arg);
     }
 
-    template<typename Arg, EnableIf<!isLValueRef<Arg>()>...>
+    template <typename Arg, EnableIf<!isLValueRef<Arg>()>...>
     inline constexpr Arg&& forward(UnRef<Arg>&& arg) {
         return static_cast<Arg&&>(arg);
     }

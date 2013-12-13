@@ -3,7 +3,7 @@
 
 namespace nova {
     template <typename Value>
-    constexpr Value&& mock(); // Not defined intentionally. Should only appear in unevaluated context.
+    inline constexpr Value&& mock(); // Not defined intentionally. Should only appear in unevaluated context.
 }
 
 #endif

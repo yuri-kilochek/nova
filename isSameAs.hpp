@@ -5,20 +5,20 @@
 
 namespace nova {
     namespace internals {
-        template <typename A, typename B>
+        template <typename TypeA, typename TypeB>
         struct IsSameAs {
             static constexpr Bool value = false;
         };
 
-        template <typename T>
-        struct IsSameAs<T, T> {
+        template <typename Type>
+        struct IsSameAs<Type, Type> {
             static constexpr Bool value = true;
         };
     }
 
-    template <typename A, typename B>
+    template <typename TypeA, typename TypeB>
     inline constexpr Bool isSameAs() {
-        return internals::IsSameAs<A, B>::value;
+        return internals::IsSameAs<TypeA, TypeB>::value;
     }
 }
 

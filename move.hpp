@@ -4,7 +4,7 @@
 #include "UnRef.hpp"
 
 namespace nova {
-    template<typename Arg>
+    template <typename Arg>
     inline constexpr UnRef<Arg>&& move(Arg&& arg) {
         return static_cast<UnRef<Arg>&&>(arg);
     }
