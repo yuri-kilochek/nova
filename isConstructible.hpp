@@ -2,7 +2,6 @@
 #define NOVA_INCLUDE_GUARD_IS_CONSTRUCTIBLE_HPP
 
 #include "mock.hpp"
-#include "Void.hpp"
 #include "Bool.hpp"
 #include "isSameAs.hpp"
 
@@ -11,15 +10,18 @@ namespace nova {
         template <typename Type, typename... Args>
         class IsConstructible {
             private:
+                template <typename OtherType>
+                struct Holder {};
+
                 struct Yes {};
                 struct No {};
 
                 template <typename OtherType>
-                static auto test(OtherType*) -> decltype(OtherType(mock<Args>()...), Yes());
-                static auto test(Void*) -> No;
+                static auto test(Holder<OtherType>) -> decltype(OtherType(mock<Args>()...), Yes());
+                static auto test(...) -> No;
 
             public:
-                static constexpr Bool value = isSameAs<decltype(test(mock<Type*>())), Yes>();
+                static constexpr Bool value = isSameAs<decltype(test(Holder<Type>())), Yes>();
         };
     }
 
