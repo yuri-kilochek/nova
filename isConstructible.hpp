@@ -3,7 +3,7 @@
 
 #include "mock.hpp"
 #include "Bool.hpp"
-#include "isSameAs.hpp"
+#include "isSame.hpp"
 
 namespace nova {
     namespace internals {
@@ -21,7 +21,7 @@ namespace nova {
                 static auto test(...) -> No;
 
             public:
-                static constexpr Bool value = isSameAs<decltype(test(Holder<Type>())), Yes>();
+                static constexpr Bool value = isSame<decltype(test(Holder<Type>())), Yes>();
         };
     }
 
