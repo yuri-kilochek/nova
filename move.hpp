@@ -1,12 +1,12 @@
 #ifndef NOVA_INCLUDE_GUARD_MOVE_HPP
 #define NOVA_INCLUDE_GUARD_MOVE_HPP
 
-#include "UnRef.hpp"
+#include "StripRef.hpp"
 
 namespace nova {
     template <typename Arg>
-    inline constexpr UnRef<Arg>&& move(Arg&& arg) {
-        return static_cast<UnRef<Arg>&&>(arg);
+    inline constexpr StripRef<Arg>&& move(Arg&& arg) {
+        return static_cast<StripRef<Arg>&&>(arg);
     }
 }
 
