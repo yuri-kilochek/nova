@@ -29,7 +29,7 @@
     #else
         #error
     #endif
-#elif defined(BS_COMPILER_CLANG) // should be built with '-fvisibility=hidden'
+#elif defined(NOVA_COMPILER_CLANG) // should be built with '-fvisibility=hidden'
     #if defined(NOVA_BUILD_DYNAMIC_EXPORT)
         #define NOVA_API __attribute__((visibility("default")))
     #elif defined(NOVA_BUILD_DYNAMIC_IMPORT)
