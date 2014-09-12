@@ -10,37 +10,29 @@
 #endif
 
 #if defined(NOVA_COMPILER_MSVC)
-    #if defined(NOVA_BUILD_DYNAMIC_EXPORT)
+    #if defined(NOVA_BUILD_STATIC)
+        #define NOVA_API
+    #elif defined(NOVA_BUILD_DYNAMIC_EXPORT)
         #define NOVA_API __declspec(dllexport)
     #elif defined(NOVA_BUILD_DYNAMIC_IMPORT)
         #define NOVA_API __declspec(dllimport)
-    #elif defined(NOVA_BUILD_STATIC)
-        #define NOVA_API
-    #else
-        #error
     #endif
 #elif defined(NOVA_COMPILER_GCC) // should be built with '-fvisibility=hidden'
-    #if defined(NOVA_BUILD_DYNAMIC_EXPORT)
-        #define NOVA_API __attribute__((visibility("default")))
+    #if defined(NOVA_BUILD_STATIC)
+        #define NOVA_API
     #elif defined(NOVA_BUILD_DYNAMIC_IMPORT)
         #define NOVA_API __attribute__((visibility("default")))
-    #elif defined(NOVA_BUILD_STATIC)
-        #define NOVA_API
-    #else
-        #error
+    #elif defined(NOVA_BUILD_DYNAMIC_EXPORT)
+        #define NOVA_API __attribute__((visibility("default")))
     #endif
 #elif defined(NOVA_COMPILER_CLANG) // should be built with '-fvisibility=hidden'
-    #if defined(NOVA_BUILD_DYNAMIC_EXPORT)
+    #if defined(NOVA_BUILD_STATIC)
+        #define NOVA_API
+    #elif defined(NOVA_BUILD_DYNAMIC_EXPORT)
         #define NOVA_API __attribute__((visibility("default")))
     #elif defined(NOVA_BUILD_DYNAMIC_IMPORT)
         #define NOVA_API __attribute__((visibility("default")))
-    #elif defined(NOVA_BUILD_STATIC)
-        #define NOVA_API
-    #else
-        #error
     #endif
-#else
-    #error
 #endif
 
 #endif

@@ -7,8 +7,6 @@
     #define NOVA_COMPILER_GCC
 #elif defined(__clang__)
     #define NOVA_COMPILER_CLANG
-#else
-    #error
 #endif
 
 #endif
