@@ -10,9 +10,9 @@ namespace nova {
         return static_cast<SByte>(value);
     }
 
-    constexpr Byte min_sb = min_i8;
+    constexpr SByte min_sb = min_i8;
 
-    constexpr Byte max_sb = max_i8;
+    constexpr SByte max_sb = max_i8;
 }
 
 #endif
