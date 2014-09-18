@@ -1,24 +1,14 @@
-#ifndef NOVA_INCLUDE_GUARD_IS_SAME_HPP
-#define NOVA_INCLUDE_GUARD_IS_SAME_HPP
+#ifndef NOVA_HEADER_IS_SAME
+#define NOVA_HEADER_IS_SAME
 
 #include "Bool.hpp"
 
+#include <type_traits>
+
 namespace nova {
-    namespace internals {
-        template <typename TypeA, typename TypeB>
-        struct IsSame {
-            static constexpr Bool value = false;
-        };
-
-        template <typename Type>
-        struct IsSame<Type, Type> {
-            static constexpr Bool value = true;
-        };
-    }
-
     template <typename TypeA, typename TypeB>
     inline constexpr Bool isSame() {
-        return internals::IsSame<TypeA, TypeB>::value;
+        return ::std::is_same<TypeA, TypeB>::value;
     }
 }
 

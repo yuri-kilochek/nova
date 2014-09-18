@@ -1,21 +1,11 @@
-#ifndef NOVA_INCLUDE_GUARD_STRIP_CONST_HPP
-#define NOVA_INCLUDE_GUARD_STRIP_CONST_HPP
+#ifndef NOVA_HEADER_STRIP_CONST
+#define NOVA_HEADER_STRIP_CONST
+
+#include <type_traits>
 
 namespace nova {
-    namespace internals {
-        template <typename Type_>
-        struct StripConst {
-            using Type = Type_;
-        };
-
-        template <typename Type_>
-        struct StripConst<Type_ const> {
-            using Type = Type_;
-        };
-    }
-
     template <typename Type>
-    using StripConst = typename internals::StripConst<Type>::Type;
+    using StripConst = typename ::std::remove_const<Type>::type;
 }
 
 #endif

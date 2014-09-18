@@ -1,12 +1,11 @@
-#ifndef NOVA_INCLUDE_GUARD_STRIP_CONST_VOLATILE_HPP
-#define NOVA_INCLUDE_GUARD_STRIP_CONST_VOLATILE_HPP
+#ifndef NOVA_HEADER_STRIP_CONST_VOLATILE
+#define NOVA_HEADER_STRIP_CONST_VOLATILE
 
-#include "StripVolatile.hpp"
-#include "StripConst.hpp"
+#include <type_traits>
 
 namespace nova {
     template <typename Type>
-    using StripConstVolatile = StripVolatile<StripConst<Type>>;
+    using StripConstVolatile = typename ::std::remove_cv<Type>::type;
 }
 
 #endif

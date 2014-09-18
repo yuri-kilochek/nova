@@ -1,5 +1,5 @@
-#ifndef NOVA_INCLUDE_GUARD_IS_CALLABLE_HPP
-#define NOVA_INCLUDE_GUARD_IS_CALLABLE_HPP
+#ifndef NOVA_HEADER_IS_CALLABLE
+#define NOVA_HEADER_IS_CALLABLE
 
 #include "mock.hpp"
 #include "Bool.hpp"

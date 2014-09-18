@@ -1,29 +1,14 @@
-#ifndef NOVA_INCLUDE_GUARD_IS_REF_HPP
-#define NOVA_INCLUDE_GUARD_IS_REF_HPP
+#ifndef NOVA_HEADER_IS_REF
+#define NOVA_HEADER_IS_REF
 
 #include "Bool.hpp"
 
+#include <type_traits>
+
 namespace nova {
-    namespace internals {
-        template <typename Type>
-        struct IsRef {
-            static constexpr Bool value = false;
-        };
-
-        template <typename Type>
-        struct IsRef<Type&> {
-            static constexpr Bool value = true;
-        };
-
-        template <typename Type>
-        struct IsRef<Type&&> {
-            static constexpr Bool value = true;
-        };
-    }
-
     template <typename Type>
     inline constexpr Bool isRef() {
-        return internals::IsRef<Type>::value;
+        return ::std::is_reference<Type>::value;
     }
 }
 

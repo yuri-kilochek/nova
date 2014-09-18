@@ -1,5 +1,5 @@
-#ifndef NOVA_INCLUDE_GUARD_MOVE_HPP
-#define NOVA_INCLUDE_GUARD_MOVE_HPP
+#ifndef NOVA_HEADER_MOVE
+#define NOVA_HEADER_MOVE
 
 #include "StripRef.hpp"
 

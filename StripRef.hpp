@@ -1,26 +1,11 @@
-#ifndef NOVA_INCLUDE_GUARD_STRIP_REF_HPP
-#define NOVA_INCLUDE_GUARD_STRIP_REF_HPP
+#ifndef NOVA_HEADER_STRIP_REF
+#define NOVA_HEADER_STRIP_REF
+
+#include <type_traits>
 
 namespace nova {
-    namespace internals {
-        template <typename Type_>
-        struct StripRef {
-            using Type = Type_;
-        };
-
-        template <typename Type_>
-        struct StripRef<Type_&> {
-            using Type = Type_;
-        };
-
-        template <typename Type_>
-        struct StripRef<Type_&&> {
-            using Type = Type_;
-        };
-    }
-
     template <typename Type>
-    using StripRef = typename internals::StripRef<Type>::Type;
+    using StripRef = typename ::std::remove_reference<Type>::type;
 }
 
 #endif

@@ -1,5 +1,5 @@
-#ifndef NOVA_INCLUDE_GUARD_VOID_HPP
-#define NOVA_INCLUDE_GUARD_VOID_HPP
+#ifndef NOVA_HEADER_VOID
+#define NOVA_HEADER_VOID
 
 namespace nova {
     using Void = void;

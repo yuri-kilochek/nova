@@ -1,5 +1,5 @@
-#ifndef NOVA_INCLUDE_GUARD_ENABLE_IF_HPP
-#define NOVA_INCLUDE_GUARD_ENABLE_IF_HPP
+#ifndef NOVA_HEADER_ENABLE_IF
+#define NOVA_HEADER_ENABLE_IF
 
 #include "Bool.hpp"
 
@@ -10,12 +10,12 @@ namespace nova {
 
         template <>
         struct EnableIf<true> {
-            enum class SfinaeSubject {};
+            enum class SfinaeVictim {};
         };
     }
 
     template <Bool condition>
-    using EnableIf = typename internals::EnableIf<condition>::SfinaeSubject;
+    using EnableIf = typename internals::EnableIf<condition>::SfinaeVictim;
 }
 
 #endif

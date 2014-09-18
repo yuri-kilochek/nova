@@ -1,5 +1,5 @@
-#ifndef NOVA_INCLUDE_GUARD_MOCK_HPP
-#define NOVA_INCLUDE_GUARD_MOCK_HPP
+#ifndef NOVA_HEADER_MOCK
+#define NOVA_HEADER_MOCK
 
 namespace nova {
     template <typename Value>

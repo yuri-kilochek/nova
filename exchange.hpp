@@ -1,5 +1,5 @@
-#ifndef NOVA_INCLUDE_GUARD_EXCHANGE_HPP
-#define NOVA_INCLUDE_GUARD_EXCHANGE_HPP
+#ifndef NOVA_HEADER_EXCHANGE
+#define NOVA_HEADER_EXCHANGE
 
 #include "move.hpp"
 #include "forward.hpp"
