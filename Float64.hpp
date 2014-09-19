@@ -15,29 +15,32 @@ namespace nova {
     using Float64 = double;
 
     template <typename MaybeFloat64, EnableIf<isSame<MaybeFloat64, Float64>()>...>
+    inline constexpr Float64 nan() {
+        return ::std::numeric_limits<Float64>::quiet_NaN();
+    }
+
+    constexpr Float64 nan_f64 = nan<Float64>();
+
+    template <typename MaybeFloat64, EnableIf<isSame<MaybeFloat64, Float64>()>...>
+    inline constexpr Float64 inf() {
+        return ::std::numeric_limits<Float64>::infinity();
+    }
+
+    constexpr Float64 inf_f64 = inf<Float64>();
+
+    template <typename MaybeFloat64, EnableIf<isSame<MaybeFloat64, Float64>()>...>
     inline constexpr Float64 min() {
-        return -::std::numeric_limits<Float64>::infinity();
+        return -inf_f64;
     }
 
     template <typename MaybeFloat64, EnableIf<isSame<MaybeFloat64, Float64>()>...>
     inline constexpr Float64 max() {
-        return +::std::numeric_limits<Float64>::infinity();
-    }
-
-    template <typename MaybeFloat64, EnableIf<isSame<MaybeFloat64, Float64>()>...>
-    inline constexpr Float64 nan() {
-        return ::std::numeric_limits<Float64>::quiet_NaN();
+        return +inf_f64;
     }
 
     inline constexpr Float64 operator "" _f64(long double value) {
         return static_cast<Float64>(value);
     }
-
-    constexpr Float64 min_f64 = min<Float64>();
-
-    constexpr Float64 max_f64 = max<Float64>();
-
-    constexpr Float64 nan_f64 = nan<Float64>();
     
     inline constexpr Bool isNan(Float64 x) {
         return ::std::isnan(x);

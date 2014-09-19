@@ -15,29 +15,32 @@ namespace nova {
     using Float32 = float;
 
     template <typename MaybeFloat32, EnableIf<isSame<MaybeFloat32, Float32>()>...>
+    inline constexpr Float32 nan() {
+        return ::std::numeric_limits<Float32>::quiet_NaN();
+    }
+
+    constexpr Float32 nan_f32 = nan<Float32>();
+
+    template <typename MaybeFloat32, EnableIf<isSame<MaybeFloat32, Float32>()>...>
+    inline constexpr Float32 inf() {
+        return ::std::numeric_limits<Float32>::infinity();
+    }
+
+    constexpr Float32 inf_f32 = inf<Float32>();
+
+    template <typename MaybeFloat32, EnableIf<isSame<MaybeFloat32, Float32>()>...>
     inline constexpr Float32 min() {
-        return -::std::numeric_limits<Float32>::infinity();
+        return -inf_f32;
     }
 
     template <typename MaybeFloat32, EnableIf<isSame<MaybeFloat32, Float32>()>...>
     inline constexpr Float32 max() {
-        return +::std::numeric_limits<Float32>::infinity();
-    }
-
-    template <typename MaybeFloat32, EnableIf<isSame<MaybeFloat32, Float32>()>...>
-    inline constexpr Float32 nan() {
-        return ::std::numeric_limits<Float32>::quiet_NaN();
+        return +inf_f32;
     }
 
     inline constexpr Float32 operator "" _f32(long double value) {
         return static_cast<Float32>(value);
     }
-
-    constexpr Float32 min_f32 = min<Float32>();
-
-    constexpr Float32 max_f32 = max<Float32>();
-
-    constexpr Float32 nan_f32 = nan<Float32>();
 
     inline constexpr Bool isNan(Float32 x) {
         return ::std::isnan(x);
