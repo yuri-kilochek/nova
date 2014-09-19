@@ -10,6 +10,10 @@
 namespace nova {
     using UInt8 = ::std::uint8_t;
 
+    inline constexpr UInt8 operator "" _ui8(unsigned long long value) {
+        return static_cast<UInt8>(value);
+    }
+
     template <typename MaybeUInt8, EnableIf<isSame<MaybeUInt8, UInt8>()>...>
     inline constexpr UInt8 min() {
         return ::std::numeric_limits<UInt8>::min();
@@ -18,10 +22,6 @@ namespace nova {
     template <typename MaybeUInt8, EnableIf<isSame<MaybeUInt8, UInt8>()>...>
     inline constexpr UInt8 max() {
         return ::std::numeric_limits<UInt8>::max();
-    }
-
-    inline constexpr UInt8 operator "" _ui8(unsigned long long value) {
-        return static_cast<UInt8>(value);
     }
 
     constexpr UInt8 max_ui8 = max<UInt8>();

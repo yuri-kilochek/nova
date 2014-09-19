@@ -14,6 +14,10 @@ namespace nova {
 
     using Float32 = float;
 
+    inline constexpr Float32 operator "" _f32(long double value) {
+        return static_cast<Float32>(value);
+    }
+
     template <typename MaybeFloat32, EnableIf<isSame<MaybeFloat32, Float32>()>...>
     inline constexpr Float32 nan() {
         return ::std::numeric_limits<Float32>::quiet_NaN();
@@ -36,10 +40,6 @@ namespace nova {
     template <typename MaybeFloat32, EnableIf<isSame<MaybeFloat32, Float32>()>...>
     inline constexpr Float32 max() {
         return +inf_f32;
-    }
-
-    inline constexpr Float32 operator "" _f32(long double value) {
-        return static_cast<Float32>(value);
     }
 
     inline constexpr Bool isNan(Float32 x) {

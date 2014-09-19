@@ -14,6 +14,10 @@ namespace nova {
 
     using Float64 = double;
 
+    inline constexpr Float64 operator "" _f64(long double value) {
+        return static_cast<Float64>(value);
+    }
+
     template <typename MaybeFloat64, EnableIf<isSame<MaybeFloat64, Float64>()>...>
     inline constexpr Float64 nan() {
         return ::std::numeric_limits<Float64>::quiet_NaN();
@@ -38,10 +42,6 @@ namespace nova {
         return +inf_f64;
     }
 
-    inline constexpr Float64 operator "" _f64(long double value) {
-        return static_cast<Float64>(value);
-    }
-    
     inline constexpr Bool isNan(Float64 x) {
         return ::std::isnan(x);
     }
