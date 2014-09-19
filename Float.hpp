@@ -1,10 +1,10 @@
 #ifndef NOVA_HEADER_FLOAT
 #define NOVA_HEADER_FLOAT
 
-#include "FloatN.hpp"
+#include "Float64.hpp"
 
 namespace nova {
-    using Float = FloatN<64>;
+    using Float = Float64;
 
     inline constexpr Float operator "" _f(long double value) {
         return static_cast<Float>(value);
