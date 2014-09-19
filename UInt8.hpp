@@ -24,8 +24,6 @@ namespace nova {
         return static_cast<UInt8>(value);
     }
 
-    constexpr UInt8 min_ui8 = min<UInt8>();
-
     constexpr UInt8 max_ui8 = max<UInt8>();
 }
 

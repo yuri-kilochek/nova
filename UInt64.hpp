@@ -24,8 +24,6 @@ namespace nova {
         return static_cast<UInt64>(value);
     }
 
-    constexpr UInt64 min_ui64 = min<UInt64>();
-
     constexpr UInt64 max_ui64 = max<UInt64>();
 }
 
