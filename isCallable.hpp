@@ -1,7 +1,7 @@
 #ifndef NOVA_HEADER_IS_CALLABLE
 #define NOVA_HEADER_IS_CALLABLE
 
-#include "mock.hpp"
+#include "fake.hpp"
 #include "Bool.hpp"
 #include "isSame.hpp"
 
@@ -17,7 +17,7 @@ namespace nova {
                 struct No {};
 
                 template <typename OtherType>
-                static auto test(Holder<OtherType>) -> decltype(mock<OtherType>()(mock<Args>()...), Yes());
+                static auto test(Holder<OtherType>) -> decltype(fake<OtherType>()(fake<Args>()...), Yes());
                 static auto test(...) -> No;
 
             public:
