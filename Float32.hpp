@@ -80,6 +80,20 @@ namespace nova {
         return ::std::ceil(x);
     }
 
+    inline constexpr Float32 min(Float32 a, Float32 b) {
+        if (isNan(a) || isNan(b)) {
+            return nan_f32;
+        }
+        return (a < b) ? a : b;
+    }
+
+    inline constexpr Float32 max(Float32 a, Float32 b) {
+        if (isNan(a) || isNan(b)) {
+            return nan_f32;
+        }
+        return (a > b) ? a : b;
+    }
+
     inline constexpr Float32 power(Float32 x, Float32 p) {
         return ::std::pow(x, p);
     }
