@@ -1,12 +1,12 @@
 #ifndef NOVA_HEADER_STRIP_QUALIFIERS
 #define NOVA_HEADER_STRIP_QUALIFIERS
 
-#include "StripConstVolatile.hpp"
+#include "StripCV.hpp"
 #include "StripRef.hpp"
 
 namespace nova {
     template <typename Type>
-    using StripQualifiers = StripConstVolatile<StripRef<Type>>;
+    using StripQualifiers = StripCV<StripRef<Type>>;
 }
 
 #endif
