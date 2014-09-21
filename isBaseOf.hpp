@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_IS_BASE
-#define NOVA_HEADER_IS_BASE
+#ifndef NOVA_HEADER_IS_BASE_OF
+#define NOVA_HEADER_IS_BASE_OF
 
 #include "Bool.hpp"
 
@@ -7,7 +7,7 @@
 
 namespace nova {
     template <typename MaybeBase, typename MaybeDerived>
-    inline constexpr Bool isBase() {
+    inline constexpr Bool isBaseOf() {
         return ::std::is_base_of<MaybeBase, MaybeDerived>::value;
     }
 }
