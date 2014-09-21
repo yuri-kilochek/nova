@@ -14,7 +14,7 @@ namespace nova {
     }
 
     template <typename Type>
-    inline Void* destruct(Type* object) {
+    inline Void* destruct(Type* object) noexcept {
         NOVA_ASSERT(object);
         Void* storage = storageOf(object);
         object->~Type();
