@@ -2,7 +2,7 @@
 #define NOVA_HEADER_FLOAT32
 
 #include "EnableIf.hpp"
-#include "isSame.hpp"
+#include "areSame.hpp"
 
 #include <limits>
 #include <climits>
@@ -18,26 +18,26 @@ namespace nova {
         return static_cast<Float32>(value);
     }
 
-    template <typename MaybeFloat32, EnableIf<isSame<MaybeFloat32, Float32>()>...>
+    template <typename MaybeFloat32, EnableIf<areSame<MaybeFloat32, Float32>()>...>
     inline constexpr Float32 nan() {
         return ::std::numeric_limits<Float32>::quiet_NaN();
     }
 
     constexpr Float32 nan_f32 = nan<Float32>();
 
-    template <typename MaybeFloat32, EnableIf<isSame<MaybeFloat32, Float32>()>...>
+    template <typename MaybeFloat32, EnableIf<areSame<MaybeFloat32, Float32>()>...>
     inline constexpr Float32 inf() {
         return ::std::numeric_limits<Float32>::infinity();
     }
 
     constexpr Float32 inf_f32 = inf<Float32>();
 
-    template <typename MaybeFloat32, EnableIf<isSame<MaybeFloat32, Float32>()>...>
+    template <typename MaybeFloat32, EnableIf<areSame<MaybeFloat32, Float32>()>...>
     inline constexpr Float32 min() {
         return -inf_f32;
     }
 
-    template <typename MaybeFloat32, EnableIf<isSame<MaybeFloat32, Float32>()>...>
+    template <typename MaybeFloat32, EnableIf<areSame<MaybeFloat32, Float32>()>...>
     inline constexpr Float32 max() {
         return +inf_f32;
     }

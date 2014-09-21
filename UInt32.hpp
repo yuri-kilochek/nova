@@ -2,7 +2,7 @@
 #define NOVA_HEADER_UINT32
 
 #include "EnableIf.hpp"
-#include "isSame.hpp"
+#include "areSame.hpp"
 
 #include <cstdint>
 #include <limits>
@@ -14,12 +14,12 @@ namespace nova {
         return static_cast<UInt32>(value);
     }
 
-    template <typename MaybeUInt32, EnableIf<isSame<MaybeUInt32, UInt32>()>...>
+    template <typename MaybeUInt32, EnableIf<areSame<MaybeUInt32, UInt32>()>...>
     inline constexpr UInt32 min() {
         return ::std::numeric_limits<UInt32>::min();
     }
 
-    template <typename MaybeUInt32, EnableIf<isSame<MaybeUInt32, UInt32>()>...>
+    template <typename MaybeUInt32, EnableIf<areSame<MaybeUInt32, UInt32>()>...>
     inline constexpr UInt32 max() {
         return ::std::numeric_limits<UInt32>::max();
     }

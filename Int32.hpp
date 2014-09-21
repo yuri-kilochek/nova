@@ -2,7 +2,7 @@
 #define NOVA_HEADER_INT32
 
 #include "EnableIf.hpp"
-#include "isSame.hpp"
+#include "areSame.hpp"
 
 #include <cstdint>
 #include <limits>
@@ -14,14 +14,14 @@ namespace nova {
         return static_cast<Int32>(value);
     }
 
-    template <typename MaybeInt32, EnableIf<isSame<MaybeInt32, Int32>()>...>
+    template <typename MaybeInt32, EnableIf<areSame<MaybeInt32, Int32>()>...>
     inline constexpr Int32 min() {
         return ::std::numeric_limits<Int32>::min();
     }
 
     constexpr Int32 min_i32 = min<Int32>();
 
-    template <typename MaybeInt32, EnableIf<isSame<MaybeInt32, Int32>()>...>
+    template <typename MaybeInt32, EnableIf<areSame<MaybeInt32, Int32>()>...>
     inline constexpr Int32 max() {
         return ::std::numeric_limits<Int32>::max();
     }

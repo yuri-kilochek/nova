@@ -2,7 +2,7 @@
 #define NOVA_HEADER_FLOAT64
 
 #include "EnableIf.hpp"
-#include "isSame.hpp"
+#include "areSame.hpp"
 
 #include <limits>
 #include <climits>
@@ -18,26 +18,26 @@ namespace nova {
         return static_cast<Float64>(value);
     }
 
-    template <typename MaybeFloat64, EnableIf<isSame<MaybeFloat64, Float64>()>...>
+    template <typename MaybeFloat64, EnableIf<areSame<MaybeFloat64, Float64>()>...>
     inline constexpr Float64 nan() {
         return ::std::numeric_limits<Float64>::quiet_NaN();
     }
 
     constexpr Float64 nan_f64 = nan<Float64>();
 
-    template <typename MaybeFloat64, EnableIf<isSame<MaybeFloat64, Float64>()>...>
+    template <typename MaybeFloat64, EnableIf<areSame<MaybeFloat64, Float64>()>...>
     inline constexpr Float64 inf() {
         return ::std::numeric_limits<Float64>::infinity();
     }
 
     constexpr Float64 inf_f64 = inf<Float64>();
 
-    template <typename MaybeFloat64, EnableIf<isSame<MaybeFloat64, Float64>()>...>
+    template <typename MaybeFloat64, EnableIf<areSame<MaybeFloat64, Float64>()>...>
     inline constexpr Float64 min() {
         return -inf_f64;
     }
 
-    template <typename MaybeFloat64, EnableIf<isSame<MaybeFloat64, Float64>()>...>
+    template <typename MaybeFloat64, EnableIf<areSame<MaybeFloat64, Float64>()>...>
     inline constexpr Float64 max() {
         return +inf_f64;
     }
