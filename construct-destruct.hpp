@@ -10,7 +10,7 @@ namespace nova {
     template <typename Type, typename... Args>
     inline Type* construct(Void* storage, Args&&... args) {
         NOVA_ASSERT(storage);
-        return new(storage) Type(forward<Args>(args)...);
+        return new(storage) Type{forward<Args>(args)...};
     }
 
     template <typename Type>
