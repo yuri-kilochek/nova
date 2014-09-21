@@ -12,15 +12,9 @@
 namespace nova {
     class NOVA_API TypeId final {
         public:
-            template <typename Type>
-            friend TypeId typeId() {
-                return {typeid(Type)};
-            };
-
-            template <typename Type>
-            friend TypeId typeId(Type const& object) {
-                return {typeid(object)};
-            };
+            TypeId(::std::type_info const& typeInfo)
+                : typeInfoPtr(&typeInfo)
+            {}
 
             friend Bool operator==(TypeId const& a, TypeId const& b) {
                 return *a.typeInfoPtr == *b.typeInfoPtr;
@@ -53,10 +47,6 @@ namespace nova {
 
         private:
             ::std::type_info const* typeInfoPtr;
-
-            TypeId(::std::type_info const& typeInfo)
-                : typeInfoPtr(&typeInfo)
-            {}
     };
 }
 
