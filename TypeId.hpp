@@ -3,9 +3,8 @@
 
 #include "API.hpp"
 #include "Bool.hpp"
-#include "EnableIf.hpp"
-#include "areSame.hpp"
 #include "UInt.hpp"
+#include "hash.hpp"
 
 #include <typeinfo>
 
@@ -40,8 +39,7 @@ namespace nova {
                 return !(a < b);
             }
 
-            template <typename MaybeTypeId, EnableIf<areSame<MaybeTypeId, TypeId>()>...>
-            friend UInt hash(MaybeTypeId const& typeId) {
+            friend UInt hash(TypeId const& typeId) {
                 return (*typeId.typeInfoPtr).hash_code();
             }
 
