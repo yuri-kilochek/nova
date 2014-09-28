@@ -4,9 +4,9 @@
 #include "forward.hpp"
 
 namespace nova {
-    template <typename Value>
-    inline constexpr Value min(Value&& value) {
-        return forward<Value>(value);
+    template <typename Type>
+    inline constexpr Type min(Type&& value) {
+        return forward<Type>(value);
     }
 
     template <typename First, typename Second>
@@ -19,9 +19,9 @@ namespace nova {
         return min(forward<First>(first), min(forward<Rest>(rest)...));
     }
 
-    template <typename Value>
-    inline constexpr Value max(Value&& value) {
-        return forward<Value>(value);
+    template <typename Type>
+    inline constexpr Type max(Type&& value) {
+        return forward<Type>(value);
     }
 
     template <typename First, typename Second>

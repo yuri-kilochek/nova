@@ -5,10 +5,10 @@
 #include "forward.hpp"
 
 namespace nova {
-    template <typename Value, typename NewValue>
-    inline Value exchange(Value& value, NewValue&& newValue) {
-        Value oldValue = move(value);
-        value = forward<NewValue>(newValue);
+    template <typename Type, typename AnyType>
+    inline Type exchange(Type& value, AnyType&& newValue) {
+        auto oldValue = move(value);
+        value = forward<AnyType>(newValue);
         return oldValue;
     }
 }

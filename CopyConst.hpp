@@ -3,19 +3,19 @@
 
 namespace nova {
     namespace internals {
-        template <typename Subject, typename Bearer>
+        template <typename To, typename From>
         struct CopyConst {
-            using Type = Subject;
+            using Type = To;
         };
 
-        template <typename Subject, typename Bearer>
-        struct CopyConst<Subject, Bearer const> {
-            using Type = Subject const;
+        template <typename To, typename From>
+        struct CopyConst<To, From const> {
+            using Type = To const;
         };
     }
 
-    template <typename Subject, typename Bearer>
-    using CopyConst = typename internals::CopyConst<Subject, Bearer>::Type;
+    template <typename To, typename From>
+    using CopyConst = typename internals::CopyConst<To, From>::Type;
 }
 
 #endif

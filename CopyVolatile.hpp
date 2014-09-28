@@ -3,19 +3,19 @@
 
 namespace nova {
     namespace internals {
-        template <typename Subject, typename Bearer>
+        template <typename To, typename From>
         struct CopyVolatile {
-            using Type = Subject;
+            using Type = To;
         };
 
-        template <typename Subject, typename Bearer>
-        struct CopyVolatile<Subject, Bearer volatile> {
-            using Type = Subject volatile;
+        template <typename To, typename From>
+        struct CopyVolatile<To, From volatile> {
+            using Type = To volatile;
         };
     }
 
-    template <typename Subject, typename Bearer>
-    using CopyVolatile = typename internals::CopyVolatile<Subject, Bearer>::Type;
+    template <typename To, typename From>
+    using CopyVolatile = typename internals::CopyVolatile<To, From>::Type;
 }
 
 #endif

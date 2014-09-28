@@ -5,8 +5,8 @@
 #include "CopyConst.hpp"
 
 namespace nova {
-    template <typename Subject, typename Bearer>
-    using CopyCV = CopyVolatile<CopyConst<Subject, Bearer>, Bearer>;
+    template <typename To, typename From>
+    using CopyCV = CopyVolatile<CopyConst<To, From>, From>;
 }
 
 #endif
