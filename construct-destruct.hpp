@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_CONSTRUCT_DESTRUCT
-#define NOVA_HEADER_CONSTRUCT_DESTRUCT
+#ifndef NOVA_HEADER_construct_destruct
+#define NOVA_HEADER_construct_destruct
 
 #include "Void.hpp"
 #include "ASSERT.hpp"

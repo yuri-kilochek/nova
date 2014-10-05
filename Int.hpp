@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_INT
-#define NOVA_HEADER_INT
+#ifndef NOVA_HEADER_Int
+#define NOVA_HEADER_Int
 
 #include "IntN.hpp"
 #include "Void.hpp"

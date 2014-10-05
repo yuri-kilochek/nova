@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_IS_LVALUE_REF
-#define NOVA_HEADER_IS_LVALUE_REF
+#ifndef NOVA_HEADER_isLValueRef
+#define NOVA_HEADER_isLValueRef
 
 #include "Bool.hpp"
 

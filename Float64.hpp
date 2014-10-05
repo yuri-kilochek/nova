@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_FLOAT64
-#define NOVA_HEADER_FLOAT64
+#ifndef NOVA_HEADER_Float64
+#define NOVA_HEADER_Float64
 
 #include "EnableIf.hpp"
 #include "areSame.hpp"

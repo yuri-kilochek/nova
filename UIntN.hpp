@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_UINTN
-#define NOVA_HEADER_UINTN
+#ifndef NOVA_HEADER_UIntN
+#define NOVA_HEADER_UIntN
 
 #include "UInt8.hpp"
 #include "UInt16.hpp"
@@ -7,7 +7,7 @@
 #include "UInt64.hpp"
 
 namespace nova {
-    namespace internals {
+    namespace internals_UIntN {
         template <int n>
         struct UIntN;
 
@@ -33,7 +33,7 @@ namespace nova {
     }
 
     template <int n>
-    using UIntN = typename internals::UIntN<n>::Type;
+    using UIntN = typename internals_UIntN::UIntN<n>::Type;
 }
 
 #endif

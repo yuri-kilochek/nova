@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_IS_STATELESS
-#define NOVA_HEADER_IS_STATELESS
+#ifndef NOVA_HEADER_isStateless
+#define NOVA_HEADER_isStateless
 
 #include "Bool.hpp"
 

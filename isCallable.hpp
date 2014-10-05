@@ -1,12 +1,12 @@
-#ifndef NOVA_HEADER_IS_CALLABLE
-#define NOVA_HEADER_IS_CALLABLE
+#ifndef NOVA_HEADER_isCallable
+#define NOVA_HEADER_isCallable
 
 #include "fake.hpp"
 #include "Bool.hpp"
 #include "isSame.hpp"
 
 namespace nova {
-    namespace internals {
+    namespace internals_isCallable {
         template <typename Type, typename... Args>
         class IsCallable {
             private:
@@ -27,7 +27,7 @@ namespace nova {
 
     template <typename Type, typename... Args>
     inline constexpr Bool isCallable() {
-        return internals::IsCallable<Type, Args...>::value;
+        return internals_isCallable::IsCallable<Type, Args...>::value;
     }
 }
 

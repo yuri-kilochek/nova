@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_STRIP_CONST
-#define NOVA_HEADER_STRIP_CONST
+#ifndef NOVA_HEADER_StripConst
+#define NOVA_HEADER_StripConst
 
 #include <type_traits>
 

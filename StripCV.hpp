@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_STRIP_CV
-#define NOVA_HEADER_STRIP_CV
+#ifndef NOVA_HEADER_StripCV
+#define NOVA_HEADER_StripCV
 
 #include <type_traits>
 

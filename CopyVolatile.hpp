@@ -1,8 +1,8 @@
-#ifndef NOVA_HEADER_COPY_VOLATILE
-#define NOVA_HEADER_COPY_VOLATILE
+#ifndef NOVA_HEADER_CopyVolatile
+#define NOVA_HEADER_CopyVolatile
 
 namespace nova {
-    namespace internals {
+    namespace internals_CopyVolatile {
         template <typename To, typename From>
         struct CopyVolatile {
             using Type = To;
@@ -15,7 +15,7 @@ namespace nova {
     }
 
     template <typename To, typename From>
-    using CopyVolatile = typename internals::CopyVolatile<To, From>::Type;
+    using CopyVolatile = typename internals_CopyVolatile::CopyVolatile<To, From>::Type;
 }
 
 #endif

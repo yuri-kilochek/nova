@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_HASH
-#define NOVA_HEADER_HASH
+#ifndef NOVA_HEADER_hash
+#define NOVA_HEADER_hash
 
 #include "UInt.hpp"
 

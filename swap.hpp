@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_SWAP
-#define NOVA_HEADER_SWAP
+#ifndef NOVA_HEADER_swap
+#define NOVA_HEADER_swap
 
 #include "Void.hpp"
 #include "move.hpp"

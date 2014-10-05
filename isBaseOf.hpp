@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_IS_BASE_OF
-#define NOVA_HEADER_IS_BASE_OF
+#ifndef NOVA_HEADER_isBaseOf
+#define NOVA_HEADER_isBaseOf
 
 #include "Bool.hpp"
 

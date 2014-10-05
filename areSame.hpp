@@ -1,12 +1,12 @@
-#ifndef NOVA_HEADER_ARE_SAME
-#define NOVA_HEADER_ARE_SAME
+#ifndef NOVA_HEADER_areSame
+#define NOVA_HEADER_areSame
 
 #include "Bool.hpp"
 
 #include <type_traits>
 
 namespace nova {
-    namespace internals {
+    namespace internals_areSame {
         template <typename... Types>
         struct AreSame;
 
@@ -28,7 +28,7 @@ namespace nova {
 
     template <typename... Types>
     inline constexpr Bool areSame() {
-        return internals::AreSame<Types...>::value;
+        return internals_areSame::AreSame<Types...>::value;
     }
 }
 

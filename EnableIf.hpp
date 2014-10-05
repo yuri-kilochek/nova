@@ -1,10 +1,10 @@
-#ifndef NOVA_HEADER_ENABLE_IF
-#define NOVA_HEADER_ENABLE_IF
+#ifndef NOVA_HEADER_EnableIf
+#define NOVA_HEADER_EnableIf
 
 #include "Bool.hpp"
 
 namespace nova {
-    namespace internals {
+    namespace internals_EnableIf {
         template <Bool condition>
         struct EnableIf {};
 
@@ -15,7 +15,7 @@ namespace nova {
     }
 
     template <Bool condition>
-    using EnableIf = typename internals::EnableIf<condition>::SfinaeVictim;
+    using EnableIf = typename internals_EnableIf::EnableIf<condition>::SfinaeVictim;
 }
 
 #endif

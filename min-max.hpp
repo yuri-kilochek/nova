@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_MIN_MAX
-#define NOVA_HEADER_MIN_MAX
+#ifndef NOVA_HEADER_min_max
+#define NOVA_HEADER_min_max
 
 #include "forward.hpp"
 

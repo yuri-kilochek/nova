@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_IS_CONSTRUCTIBLE
-#define NOVA_HEADER_IS_CONSTRUCTIBLE
+#ifndef NOVA_HEADER_isConstructible
+#define NOVA_HEADER_isConstructible
 
 #include "Bool.hpp"
 

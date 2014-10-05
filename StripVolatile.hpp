@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_STRIP_VOLATILE
-#define NOVA_HEADER_STRIP_VOLATILE
+#ifndef NOVA_HEADER_StripVolatile
+#define NOVA_HEADER_StripVolatile
 
 #include <type_traits>
 

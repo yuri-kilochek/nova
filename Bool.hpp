@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_BOOL
-#define NOVA_HEADER_BOOL
+#ifndef NOVA_HEADER_Bool
+#define NOVA_HEADER_Bool
 
 namespace nova {
     using Bool = bool;

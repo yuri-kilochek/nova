@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_FAKE
-#define NOVA_HEADER_FAKE
+#ifndef NOVA_HEADER_fake
+#define NOVA_HEADER_fake
 
 namespace nova {
     template <typename Type>

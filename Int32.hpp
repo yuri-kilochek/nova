@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_INT32
-#define NOVA_HEADER_INT32
+#ifndef NOVA_HEADER_Int32
+#define NOVA_HEADER_Int32
 
 #include "EnableIf.hpp"
 #include "areSame.hpp"

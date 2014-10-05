@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_COPY_CV
-#define NOVA_HEADER_COPY_CV
+#ifndef NOVA_HEADER_CopyCV
+#define NOVA_HEADER_CopyCV
 
 #include "CopyVolatile.hpp"
 #include "CopyConst.hpp"

@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_STRIP_QUALIFIERS
-#define NOVA_HEADER_STRIP_QUALIFIERS
+#ifndef NOVA_HEADER_StripQualifiers
+#define NOVA_HEADER_StripQualifiers
 
 #include "StripCV.hpp"
 #include "StripRef.hpp"

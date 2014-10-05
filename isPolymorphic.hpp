@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_IS_POLYMORPHIC
-#define NOVA_HEADER_IS_POLYMORPHIC
+#ifndef NOVA_HEADER_isPolymorphic
+#define NOVA_HEADER_isPolymorphic
 
 #include "Bool.hpp"
 

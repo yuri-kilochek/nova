@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_TYPE_ID
-#define NOVA_HEADER_TYPE_ID
+#ifndef NOVA_HEADER_TypeId
+#define NOVA_HEADER_TypeId
 
 #include "API.hpp"
 #include "Bool.hpp"

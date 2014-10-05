@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_FORWARD
-#define NOVA_HEADER_FORWARD
+#ifndef NOVA_HEADER_forward
+#define NOVA_HEADER_forward
 
 #include "StripRef.hpp"
 #include "EnableIf.hpp"

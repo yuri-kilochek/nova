@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_INTN
-#define NOVA_HEADER_INTN
+#ifndef NOVA_HEADER_IntN
+#define NOVA_HEADER_IntN
 
 #include "Int8.hpp"
 #include "Int16.hpp"
@@ -7,7 +7,7 @@
 #include "Int64.hpp"
 
 namespace nova {
-    namespace internals {
+    namespace internals_IntN {
         template <int n>
         struct IntN;
 
@@ -33,7 +33,7 @@ namespace nova {
     }
 
     template <int n>
-    using IntN = typename internals::IntN<n>::Type;
+    using IntN = typename internals_IntN::IntN<n>::Type;
 }
 
 #endif

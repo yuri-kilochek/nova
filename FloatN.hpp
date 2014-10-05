@@ -1,11 +1,11 @@
-#ifndef NOVA_HEADER_FLOATN
-#define NOVA_HEADER_FLOATN
+#ifndef NOVA_HEADER_FloatN
+#define NOVA_HEADER_FloatN
 
 #include "Float32.hpp"
 #include "Float64.hpp"
 
 namespace nova {
-    namespace internals {
+    namespace internals_FloatN {
         template <int n>
         struct FloatN;
 
@@ -21,7 +21,7 @@ namespace nova {
     }
 
     template <int n>
-    using FloatN = typename internals::FloatN<n>::Type;
+    using FloatN = typename internals_FloatN::FloatN<n>::Type;
 }
 
 #endif

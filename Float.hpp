@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_FLOAT
-#define NOVA_HEADER_FLOAT
+#ifndef NOVA_HEADER_Float
+#define NOVA_HEADER_Float
 
 #include "Float64.hpp"
 

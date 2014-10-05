@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_STORAGE_OF
-#define NOVA_HEADER_STORAGE_OF
+#ifndef NOVA_HEADER_storageOf
+#define NOVA_HEADER_storageOf
 
 #include "EnableIf.hpp"
 #include "isPolymorphic.hpp"

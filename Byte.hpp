@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_BYTE
-#define NOVA_HEADER_BYTE
+#ifndef NOVA_HEADER_Byte
+#define NOVA_HEADER_Byte
 
 #include "UInt8.hpp"
 
