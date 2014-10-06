@@ -7,27 +7,27 @@
 
 namespace nova {
     namespace internals_isCallable {
-        template <typename Type, typename... Args>
-        class IsCallable {
-        private:
-            template <typename OtherType>
-            struct Holder {};
-
+        template <typename MaybeCallable, typename... Args>
+        struct IsCallable {
             struct Yes {};
             struct No {};
 
-            template <typename OtherType>
-            static auto test(Holder<OtherType>) -> decltype(fake<OtherType>()(fake<Args>()...), Yes());
-            static auto test(...) -> No;
+            template <typename OtherMaybeCallable, typename... OtherArgs>
+            struct Box {};
 
-        public:
-            static constexpr Bool value = areSame<decltype(test(Holder<Type>())), Yes>();
+            template <typename OtherMaybeCallable, typename... OtherArgs>
+            static auto test(Box<OtherMaybeCallable, OtherArgs>)
+                -> decltype(fake<OtherMaybeCallable>()(fake<OtherArgs>()...), Yes());
+            static auto test(...)
+                -> No;
+
+            static constexpr Bool value = areSame<decltype(test(Box<MaybeCallable, Args...>())), Yes>();
         };
     }
 
-    template <typename Type, typename... Args>
+    template <typename MaybeCallable, typename... Args>
     inline constexpr Bool isCallable() {
-        return internals_isCallable::IsCallable<Type, Args...>::value;
+        return internals_isCallable::IsCallable<MaybeCallable, Args...>::value;
     }
 }
 
