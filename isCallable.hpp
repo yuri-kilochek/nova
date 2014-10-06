@@ -3,7 +3,7 @@
 
 #include "fake.hpp"
 #include "Bool.hpp"
-#include "isSame.hpp"
+#include "areSame.hpp"
 
 namespace nova {
     namespace internals_isCallable {
@@ -21,7 +21,7 @@ namespace nova {
             static auto test(...) -> No;
 
         public:
-            static constexpr Bool value = isSame<decltype(test(Holder<Type>())), Yes>();
+            static constexpr Bool value = areSame<decltype(test(Holder<Type>())), Yes>();
         };
     }
 
