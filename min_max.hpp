@@ -4,11 +4,6 @@
 #include "forward.hpp"
 
 namespace nova {
-    template <typename Type>
-    inline constexpr Type min(Type&& value) {
-        return forward<Type>(value);
-    }
-
     template <typename First, typename Second>
     inline constexpr auto min(First&& first, Second&& second)
         -> decltype((second < first) ? forward<Second>(second) : forward<First>(first))
@@ -21,11 +16,6 @@ namespace nova {
         -> decltype(min(forward<First>(first), min(forward<Rest>(rest)...)))
     {
         return min(forward<First>(first), min(forward<Rest>(rest)...));
-    }
-
-    template <typename Type>
-    inline constexpr Type max(Type&& value) {
-        return forward<Type>(value);
     }
 
     template <typename First, typename Second>
