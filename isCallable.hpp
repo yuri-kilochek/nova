@@ -6,7 +6,7 @@
 #include "areSame.hpp"
 
 namespace nova {
-    namespace internals_isCallable {
+    namespace _internal_isCallable {
         template <typename MaybeCallable, typename... Args>
         struct IsCallable {
             struct Yes {};
@@ -27,7 +27,7 @@ namespace nova {
 
     template <typename MaybeCallable, typename... Args>
     inline constexpr Bool isCallable() {
-        return internals_isCallable::IsCallable<MaybeCallable, Args...>::value;
+        return _internal_isCallable::IsCallable<MaybeCallable, Args...>::value;
     }
 }
 

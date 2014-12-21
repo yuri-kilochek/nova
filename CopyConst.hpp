@@ -2,7 +2,7 @@
 #define NOVA_HEADER_CopyConst
 
 namespace nova {
-    namespace internals_CopyConst {
+    namespace _internal_CopyConst {
         template <typename To, typename From>
         struct CopyConst {
             using Type = To;
@@ -15,7 +15,7 @@ namespace nova {
     }
 
     template <typename To, typename From>
-    using CopyConst = typename internals_CopyConst::CopyConst<To, From>::Type;
+    using CopyConst = typename _internal_CopyConst::CopyConst<To, From>::Type;
 }
 
 #endif

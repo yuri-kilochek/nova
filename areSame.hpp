@@ -6,7 +6,7 @@
 #include <type_traits>
 
 namespace nova {
-    namespace internals_areSame {
+    namespace _internal_areSame {
         template <typename... Types>
         struct AreSame;
 
@@ -28,7 +28,7 @@ namespace nova {
 
     template <typename... Types>
     inline constexpr Bool areSame() {
-        return internals_areSame::AreSame<Types...>::value;
+        return _internal_areSame::AreSame<Types...>::value;
     }
 }
 

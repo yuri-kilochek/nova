@@ -4,7 +4,7 @@
 #include "Bool.hpp"
 
 namespace nova {
-    namespace internals_EnableIf {
+    namespace _internal_EnableIf {
         template <Bool condition>
         struct EnableIf {};
 
@@ -15,7 +15,7 @@ namespace nova {
     }
 
     template <Bool condition>
-    using EnableIf = typename internals_EnableIf::EnableIf<condition>::SfinaeVictim;
+    using EnableIf = typename _internal_EnableIf::EnableIf<condition>::SfinaeVictim;
 }
 
 #endif
