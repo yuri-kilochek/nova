@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_MEMORY
-#define NOVA_HEADER_MEMORY
+#ifndef NOVA_HEADER_memory
+#define NOVA_HEADER_memory
 
 #include "API.hpp"
 #include "Void.hpp"
