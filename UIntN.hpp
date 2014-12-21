@@ -7,7 +7,7 @@
 #include "UInt64.hpp"
 
 namespace nova {
-    namespace internals_UIntN {
+    namespace _internal_UIntN {
         template <int n>
         struct UIntN;
 
@@ -33,7 +33,7 @@ namespace nova {
     }
 
     template <int n>
-    using UIntN = typename internals_UIntN::UIntN<n>::Type;
+    using UIntN = typename _internal_UIntN::UIntN<n>::Type;
 }
 
 #endif

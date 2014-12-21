@@ -7,7 +7,7 @@
 #include "Int64.hpp"
 
 namespace nova {
-    namespace internals_IntN {
+    namespace _internal_IntN {
         template <int n>
         struct IntN;
 
@@ -33,7 +33,7 @@ namespace nova {
     }
 
     template <int n>
-    using IntN = typename internals_IntN::IntN<n>::Type;
+    using IntN = typename _internal_IntN::IntN<n>::Type;
 }
 
 #endif

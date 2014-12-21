@@ -5,7 +5,7 @@
 #include "Float64.hpp"
 
 namespace nova {
-    namespace internals_FloatN {
+    namespace _internal_FloatN {
         template <int n>
         struct FloatN;
 
@@ -21,7 +21,7 @@ namespace nova {
     }
 
     template <int n>
-    using FloatN = typename internals_FloatN::FloatN<n>::Type;
+    using FloatN = typename _internal_FloatN::FloatN<n>::Type;
 }
 
 #endif
