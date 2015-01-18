@@ -1,18 +1,18 @@
 #ifndef NOVA_HEADER_Float
 #define NOVA_HEADER_Float
 
-#include "Float64.hpp"
+#include <limits>
 
 namespace nova {
-    using Float = Float64;
+    using Float = double;
 
-    inline constexpr Float operator "" _f(long double value) {
-        return static_cast<Float>(value);
-    }
+    static_assert(::std::numeric_limits<float>::is_iec559, "float is not iec559.");
+    static_assert(sizeof(float) == 4, "float is not iec559 binary32.");
+    using Float32 = float;
 
-    constexpr Float inf_f = inf<Float>();
-
-    constexpr Float nan_f = nan<Float>();
+    static_assert(::std::numeric_limits<double>::is_iec559, "double is not iec559.");
+    static_assert(sizeof(double) == 8, "double is not iec559 binary64.");
+    using Float64 = double;
 }
 
 #endif

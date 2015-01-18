@@ -1,7 +1,7 @@
 #ifndef NOVA_HEADER_SByte
 #define NOVA_HEADER_SByte
 
-#include "Int8.hpp"
+#include "Int.hpp"
 
 namespace nova {
     using SByte = Int8;

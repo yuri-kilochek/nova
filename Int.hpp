@@ -1,21 +1,15 @@
 #ifndef NOVA_HEADER_Int
 #define NOVA_HEADER_Int
 
-#include "IntN.hpp"
-#include "Void.hpp"
-
-#include <climits>
+#include <cstdint>
 
 namespace nova {
-    using Int = IntN<sizeof(Void*) * CHAR_BIT>;
+    using Int = ::std::intptr_t;
 
-    inline constexpr Int operator "" _i(unsigned long long value) {
-        return static_cast<Int>(value);
-    }
-
-    constexpr Int min_i = min<Int>();
-
-    constexpr Int max_i = max<Int>();
-}
+    using Int8 = ::std::int8_t;
+    using Int16 = ::std::int16_t;
+    using Int32 = ::std::int32_t;
+    using Int64 = ::std::int64_t;
+};
 
 #endif

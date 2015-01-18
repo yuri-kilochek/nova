@@ -1,19 +1,15 @@
 #ifndef NOVA_HEADER_UInt
 #define NOVA_HEADER_UInt
 
-#include "UIntN.hpp"
-#include "Void.hpp"
-
-#include <climits>
+#include <cstdint>
 
 namespace nova {
-    using UInt = UIntN<sizeof(Void*) * CHAR_BIT>;
+    using UInt = ::std::uintptr_t;
 
-    inline constexpr UInt operator "" _ui(unsigned long long value) {
-        return static_cast<UInt>(value);
-    }
-
-    constexpr UInt max_ui = max<UInt>();
+    using UInt8 = ::std::uint8_t;
+    using UInt16 = ::std::uint16_t;
+    using UInt32 = ::std::uint32_t;
+    using UInt64 = ::std::uint64_t;
 }
 
 #endif
