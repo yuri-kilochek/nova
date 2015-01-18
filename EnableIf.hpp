@@ -4,18 +4,16 @@
 #include "Bool.hpp"
 
 namespace nova {
-    namespace _internal_EnableIf {
-        template <Bool condition>
-        struct EnableIf {};
+    template <Bool condition>
+    struct _internal_EnableIf {};
 
-        template <>
-        struct EnableIf<true> {
-            enum class SfinaeVictim {};
-        };
-    }
+    template <>
+    struct _internal_EnableIf<true> {
+        enum class SfinaeVictim {};
+    };
 
     template <Bool condition>
-    using EnableIf = typename _internal_EnableIf::EnableIf<condition>::SfinaeVictim;
+    using EnableIf = typename _internal_EnableIf<condition>::SfinaeVictim;
 }
 
 #endif
