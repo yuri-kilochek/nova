@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_isConstructible
-#define NOVA_HEADER_isConstructible
+#ifndef NOVA_HEADER_isExplicitlyConstructible
+#define NOVA_HEADER_isExplicitlyConstructible
 
 #include "Bool.hpp"
 
@@ -7,7 +7,7 @@
 
 namespace nova {
     template <typename Type, typename... Args>
-    inline constexpr Bool isConstructible() {
+    inline constexpr Bool isExplicitlyConstructible() {
         return ::std::is_constructible<Type, Args...>::value;
     }
 }
