@@ -4,9 +4,9 @@
 #include "StripRef.hpp"
 
 namespace nova {
-    template <typename Arg>
-    inline constexpr StripRef<Arg>&& move(Arg&& arg) {
-        return static_cast<StripRef<Arg>&&>(arg);
+    template <typename Type>
+    inline constexpr StripRef<Type>&& move(Type&& value) {
+        return static_cast<StripRef<Type>&&>(value);
     }
 }
 
