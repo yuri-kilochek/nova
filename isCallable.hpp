@@ -6,26 +6,26 @@
 #include "areSame.hpp"
 
 namespace nova {
-    template <typename MaybeCallable, typename... Args>
+    template <typename Type, typename... Args>
     struct _internal_isCallable {
         struct Yes {};
         struct No {};
 
-        template <typename OtherMaybeCallable, typename... OtherArgs>
+        template <typename T>
         struct Box {};
 
-        template <typename OtherMaybeCallable, typename... OtherArgs>
-        static auto test(Box<OtherMaybeCallable, OtherArgs>)
-            -> decltype(fake<OtherMaybeCallable>()(fake<OtherArgs>()...), Yes());
+        template <typename T>
+        static auto test(Box<T>)
+            -> decltype(fake<T>()(fake<Args>()...), Yes());
         static auto test(...)
             -> No;
 
-        static constexpr Bool value = areSame<decltype(test(Box<MaybeCallable, Args...>())), Yes>();
+        static constexpr Bool value = areSame<decltype(test(Box<Type>{})), Yes>();
     };
 
-    template <typename MaybeCallable, typename... Args>
+    template <typename Type, typename... Args>
     inline constexpr Bool isCallable() {
-        return _internal_isCallable<MaybeCallable, Args...>::value;
+        return _internal_isCallable<Type, Args...>::value;
     }
 }
 
