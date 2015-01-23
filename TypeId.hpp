@@ -9,8 +9,7 @@
 #include <typeinfo>
 
 namespace nova {
-    class NOVA_API TypeId final {
-    public:
+    struct NOVA_API TypeId final {
         TypeId(::std::type_info const& typeInfo)
             : typeInfoPtr(&typeInfo)
         {}
