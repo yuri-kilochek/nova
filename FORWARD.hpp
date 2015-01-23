@@ -3,7 +3,7 @@
 
 #include "StripRef.hpp"
 #include "EnableIf.hpp"
-#include "isLValueRef.hpp"
+#include "isLRef.hpp"
 
 namespace nova {
     template <typename Arg>
@@ -11,7 +11,7 @@ namespace nova {
         return static_cast<Arg&&>(arg);
     }
 
-    template <typename Arg, EnableIf<!isLValueRef<Arg>()>...>
+    template <typename Arg, EnableIf<!isLRef<Arg>()>...>
     inline constexpr Arg&& _internal_FORWARD(StripRef<Arg>&& arg) {
         return static_cast<Arg&&>(arg);
     }

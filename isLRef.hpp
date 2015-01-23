@@ -1,5 +1,5 @@
-#ifndef NOVA_HEADER_isLValueRef
-#define NOVA_HEADER_isLValueRef
+#ifndef NOVA_HEADER_isLRef
+#define NOVA_HEADER_isLRef
 
 #include "Bool.hpp"
 
@@ -7,7 +7,7 @@
 
 namespace nova {
     template <typename Type>
-    inline constexpr Bool isLValueRef() {
+    inline constexpr Bool isLRef() {
         return ::std::is_lvalue_reference<Type>::value;
     }
 }
