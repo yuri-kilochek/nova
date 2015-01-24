@@ -127,7 +127,7 @@ namespace nova {
     }
 
     inline constexpr Float32 exp10(Float32 x) {
-        return ::std::pow(Float32{10.0}, x);
+        return ::std::pow(Float32{10}, x);
     }
 
     inline constexpr Float32 expM1(Float32 x) {
