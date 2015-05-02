@@ -9,21 +9,31 @@
 #include <typeinfo>
 
 namespace nova {
+    struct TypeId;
+
+    namespace _internal_TypeId {
+        struct Default {};
+
+        TypeId make(::std::type_info const& typeInfo);
+    }
+    
     struct NOVA_API TypeId final {
-        TypeId(::std::type_info const& typeInfo)
-            : typeInfoPtr(&typeInfo)
+        TypeId()
+            : TypeId{typeid(_internal_TypeId::Default)}
         {}
 
+        friend TypeId _internal_TypeId::make(::std::type_info const& typeInfo);
+
         friend Bool operator==(TypeId const& a, TypeId const& b) {
-            return *a.typeInfoPtr == *b.typeInfoPtr;
+            return a.typeInfo == b.typeInfo;
         }
 
         friend Bool operator!=(TypeId const& a, TypeId const& b) {
-            return *a.typeInfoPtr != *b.typeInfoPtr;
+            return a.typeInfo != b.typeInfo;
         }
 
         friend Bool operator<(TypeId const& a, TypeId const& b) {
-            return (*a.typeInfoPtr).before(*b.typeInfoPtr);
+            return a.typeInfo.before(b.typeInfo);
         }
 
         friend Bool operator<=(TypeId const& a, TypeId const& b) {
@@ -31,7 +41,7 @@ namespace nova {
         }
 
         friend Bool operator>(TypeId const& a, TypeId const& b) {
-            return (*b.typeInfoPtr).before(*a.typeInfoPtr);
+            return b.typeInfo.before(a.typeInfo);
         }
 
         friend Bool operator>=(TypeId const& a, TypeId const& b) {
@@ -39,12 +49,32 @@ namespace nova {
         }
 
         friend UInt hash(TypeId const& typeId) {
-            return (*typeId.typeInfoPtr).hash_code();
+            return typeId.typeInfo.hash_code();
         }
 
     private:
-        ::std::type_info const* typeInfoPtr;
+        ::std::type_info const& typeInfo;
+
+        TypeId(::std::type_info const& typeInfo)
+            : typeInfo{typeInfo}
+        {}
     };
+
+    namespace _internal_TypeId {
+        inline TypeId make(::std::type_info const& typeInfo) {
+            return {typeInfo};
+        }
+    }
 }
+
+#define NOVA_TYPE_ID(...) ( \
+    [&]{ \
+        try { \
+            return ::nova::_internal_TypeId::make(typeid(__VA_ARGS__)); \
+        } catch (::std::bad_typeid&) { \
+            return ::nova::TypeId{}; \
+        } \
+    }() \
+)
 
 #endif
