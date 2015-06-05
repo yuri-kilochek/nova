@@ -25,15 +25,15 @@ namespace nova {
         friend TypeId _internal_TypeId::make(::std::type_info const& typeInfo);
 
         friend Bool operator==(TypeId const& a, TypeId const& b) {
-            return a.typeInfo == b.typeInfo;
+            return *a.typeInfo == *b.typeInfo;
         }
 
         friend Bool operator!=(TypeId const& a, TypeId const& b) {
-            return a.typeInfo != b.typeInfo;
+            return *a.typeInfo != *b.typeInfo;
         }
 
         friend Bool operator<(TypeId const& a, TypeId const& b) {
-            return a.typeInfo.before(b.typeInfo);
+            return a.typeInfo->before(*b.typeInfo);
         }
 
         friend Bool operator<=(TypeId const& a, TypeId const& b) {
@@ -41,7 +41,7 @@ namespace nova {
         }
 
         friend Bool operator>(TypeId const& a, TypeId const& b) {
-            return b.typeInfo.before(a.typeInfo);
+            return b.typeInfo->before(*a.typeInfo);
         }
 
         friend Bool operator>=(TypeId const& a, TypeId const& b) {
@@ -49,14 +49,14 @@ namespace nova {
         }
 
         friend UInt hash(TypeId const& typeId) {
-            return typeId.typeInfo.hash_code();
+            return typeId.typeInfo->hash_code();
         }
 
     private:
-        ::std::type_info const& typeInfo;
+        ::std::type_info const* typeInfo;
 
         TypeId(::std::type_info const& typeInfo)
-            : typeInfo{typeInfo}
+            : typeInfo{&typeInfo}
         {}
     };
 
