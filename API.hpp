@@ -4,7 +4,7 @@
 #include "COMPILER.hpp"
 
 #if defined(NOVA_EXPORT) && defined(NOVA_IMPORT)
-    #error "You cannot import and export simultaneously."
+    #error You cannot import and export simultaneously.
 #endif
 
 #if defined(NOVA_COMPILER_MSVC)
@@ -19,7 +19,7 @@
     #endif
 #else
     #if defined(NOVA_EXPORT) || defined(NOVA_IMPORT)
-        #error "Dynamic linking not implemented for this compiler."
+        #error Dynamic linking not implemented for this compiler.
     #endif
 #endif
 

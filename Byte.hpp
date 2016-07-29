@@ -1,10 +1,10 @@
 #ifndef NOVA_HEADER_Byte
 #define NOVA_HEADER_Byte
 
-#include "UInt.hpp"
+#include "Nat8.hpp"
 
 namespace nova {
-    using Byte = UInt8;
+    using Byte = Nat8;
 }
 
 #endif

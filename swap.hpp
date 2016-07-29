@@ -5,8 +5,8 @@
 #include "move.hpp"
 
 namespace nova {
-    template <typename Type>
-    inline Void swap(Type& a, Type& b) {
+    template <typename A, typename B>
+    inline Void swap(A& a, B& b) {
         auto t = move(a);
         a = move(b);
         b = move(t);

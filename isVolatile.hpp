@@ -1,15 +1,14 @@
 #ifndef NOVA_HEADER_isVolatile
 #define NOVA_HEADER_isVolatile
 
-#include "Bool.hpp"
+#include "Boolean.hpp"
+#include "StripRef.hpp"
 
 #include <type_traits>
 
 namespace nova {
     template <typename Type>
-    inline constexpr Bool isVolatile() {
-        return ::std::is_volatile<Type>::value;
-    }
+    static constexpr Boolean const isVolatile = ::std::is_volatile<StripRef<Type>>::value;
 }
 
 #endif

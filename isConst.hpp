@@ -1,15 +1,14 @@
 #ifndef NOVA_HEADER_isConst
 #define NOVA_HEADER_isConst
 
-#include "Bool.hpp"
+#include "Boolean.hpp"
+#include "StripRef.hpp"
 
 #include <type_traits>
 
 namespace nova {
     template <typename Type>
-    inline constexpr Bool isConst() {
-        return ::std::is_const<Type>::value;
-    }
+    static constexpr Boolean const isConst = ::std::is_const<StripRef<Type>>::value;
 }
 
 #endif

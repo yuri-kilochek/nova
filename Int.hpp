@@ -10,6 +10,6 @@ namespace nova {
     using Int16 = ::std::int16_t;
     using Int32 = ::std::int32_t;
     using Int64 = ::std::int64_t;
-};
+}
 
 #endif
