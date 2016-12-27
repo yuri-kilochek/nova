@@ -18,6 +18,6 @@ namespace nova {
 }
 
 #define NOVA_FORWARD(arg) \
-    ::nova::_internal_PASS<decltype(arg)>(arg)
+    (::nova::_internal_FORWARD<decltype(arg)>(arg))
 
 #endif
